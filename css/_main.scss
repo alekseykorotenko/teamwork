@@ -7,4 +7,22 @@
 
 .teamBlock {
   display: flex;
+  // grid-template-columns: 1fr 1fr 1fr 1fr;
 }
+
+.adjudicatorBlock {
+  display: flex;
+  // justify-content: flex-end;
+}
+
+input,
+.firstitem {
+  width: 139px;
+  height: 16x;
+  // border: 2px solid black;
+  padding: 1px 2px;
+}
+
+// .firstitem {
+//   margin-bottom: px;
+// }

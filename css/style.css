@@ -147,4 +147,15 @@ table {
 
 .teamBlock {
   display: flex;
+}
+
+.adjudicatorBlock {
+  display: flex;
+}
+
+input,
+.firstitem {
+  width: 139px;
+  height: 16x;
+  padding: 1px 2px;
 }/*# sourceMappingURL=style.css.map */
