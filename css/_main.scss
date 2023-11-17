@@ -24,11 +24,11 @@ body {
   display: flex;
   flex-direction: column;
   justify-content: center;
-  align-items: flex-start;
+  align-items: center;
   padding: 40px 0 60px;
   #wrap-container {
     position: relative;
-    left: 32%;
+    // left: 32%;
     .wrap-heading {
       display: flex;
       justify-content: space-between;

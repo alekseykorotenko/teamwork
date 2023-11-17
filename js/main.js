@@ -28,12 +28,17 @@ btnStart.addEventListener('click', function () {
   setTeamBlock += '</div>';
 
   let resultBlock = adjudicator;
+  let search = document.getElementById('wrap-container');
 
-  if (markAmount > 10) {
+  if (markAmount > 7) {
     // search.style.position = 'relative';
     // search.style.left = '32%';
     teamResult.style.overflowX = 'scroll';
-    // teamResult.firstChild.style.alignItem = 'center';
+    teamResult.style.alignItems = 'flex-start';
+    search.style.left = '32%';
+  } else {
+    teamResult.style.alignItems = 'center';
+    search.style.left = '0';
   }
 
   for (let i = 0; i < teamAmount; i++) {
@@ -44,7 +49,6 @@ btnStart.addEventListener('click', function () {
   teamResultBlock.innerHTML = resultBlock;
 
   let btnResult = document.querySelector('.result-btn');
-  let search = document.getElementById('wrap-container');
   let teamResultArray = document.getElementsByClassName('team');
   let markResultArray = document.getElementsByClassName('mark');
   let sumResultArray = document.getElementsByClassName('result');
