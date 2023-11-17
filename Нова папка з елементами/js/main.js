@@ -1,13 +1,14 @@
 let teamResultBlock = document.querySelector('.team-result__item');
 let teamBlock = document.getElementsByClassName('teamBlock');
-let teamResult = document.querySelector('.team-result');
+let search = document.getElementById('wrap-container');
+
 let btnStart = document.querySelector('#wrap-btn');
 
 btnStart.addEventListener('click', function () {
+  search.style.display = 'none';
+
   let teamAmount = document.getElementById('teamAmount').value;
   let markAmount = document.getElementById('markAmount').value;
-
-  console.log(markAmount);
 
   let setTeamBlock =
     '<div class="teamBlock"> <input type="text" class="team" placeholder="Вкажи команду" />';
@@ -17,7 +18,7 @@ btnStart.addEventListener('click', function () {
     '<div class="adjudicatorBlock"> <div class="firstitem"></div>';
 
   for (let i = 0; i < markAmount; i++) {
-    markAmountBlock += `<div class="teamMark"><input type="number" class="mark" placeholder="Вкажи оцінку" min="1"/></div>`;
+    markAmountBlock += `<div class="teamMark"><input type="number" class="mark" placeholder="Вкажи оцінку" min="1" max="100"/></div>`;
     adjudicator += `<input type="text" class="adjudicator" placeholder="Вкажи жюрі"/>`;
   }
 
@@ -29,40 +30,30 @@ btnStart.addEventListener('click', function () {
 
   let resultBlock = adjudicator;
 
-  if (markAmount > 10) {
-    // search.style.position = 'relative';
-    // search.style.left = '32%';
-    teamResult.style.overflowX = 'scroll';
-    // teamResult.firstChild.style.alignItem = 'center';
-  }
-
   for (let i = 0; i < teamAmount; i++) {
     resultBlock += setTeamBlock;
   }
   resultBlock += '<button class="result-btn">Порахувати</button>';
 
+  document
+    .querySelector('#teamAmount')
+    .addEventListener('input', ({ target: t }) => {
+      t.value = Math.max(t.min, Math.min(t.max, t.value));
+    });
+
   teamResultBlock.innerHTML = resultBlock;
 
   let btnResult = document.querySelector('.result-btn');
-  let search = document.getElementById('wrap-container');
   let teamResultArray = document.getElementsByClassName('team');
   let markResultArray = document.getElementsByClassName('mark');
   let sumResultArray = document.getElementsByClassName('result');
+  // let winner = document.getElementsByClassName('result')[0];
 
-  for (let i = 0; i < markResultArray.length; i++) {
-    markResultArray[i].addEventListener('change', function () {
-      let v = parseInt(this.value);
-      if (v < 1) this.value = 1;
-      if (v > 100) this.value = 100;
-    });
-  }
+  document.querySelector('.mark').addEventListener('input', ({ target: t }) => {
+    t.value = Math.max(t.min, Math.min(t.max, t.value));
+  });
 
   btnResult.addEventListener('click', function () {
-    let result = document.createElement(`div`);
-    result.className = `resultText`;
-    result.innerHTML = `Результати`;
-    teamResultBlock.prepend(result);
-
     let markList = [];
 
     for (let i = 0; i < markResultArray.length; i++) {

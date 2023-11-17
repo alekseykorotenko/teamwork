@@ -1,0 +1,256 @@
+@import url("https://fonts.googleapis.com/css2?family=Nunito:wght@400;500;700&display=swap");
+* {
+  box-sizing: border-box;
+}
+
+html,
+body,
+div,
+span,
+applet,
+object,
+iframe,
+h1,
+h2,
+h3,
+h4,
+h5,
+h6,
+p,
+blockquote,
+pre,
+a,
+abbr,
+acronym,
+address,
+big,
+cite,
+code,
+del,
+dfn,
+em,
+img,
+ins,
+kbd,
+q,
+s,
+samp,
+small,
+strike,
+strong,
+sub,
+sup,
+tt,
+var,
+b,
+u,
+i,
+center,
+dl,
+dt,
+dd,
+ol,
+ul,
+li,
+fieldset,
+form,
+label,
+legend,
+table,
+caption,
+tbody,
+tfoot,
+thead,
+tr,
+th,
+td,
+article,
+aside,
+canvas,
+details,
+embed,
+figure,
+figcaption,
+footer,
+header,
+hgroup,
+menu,
+nav,
+output,
+ruby,
+section,
+summary,
+time,
+mark,
+audio,
+video {
+  margin: 0;
+  padding: 0;
+  border: 0;
+  font-size: 100%;
+  font: inherit;
+  vertical-align: baseline;
+}
+
+/* HTML5 display-role reset for older browsers */
+article,
+aside,
+details,
+figcaption,
+figure,
+footer,
+header,
+hgroup,
+menu,
+nav,
+section {
+  display: block;
+}
+
+html {
+  font-size: 16px;
+}
+
+body {
+  line-height: 1;
+  font-size: 1rem;
+}
+
+ol,
+ul {
+  list-style: none;
+}
+
+blockquote,
+q {
+  quotes: none;
+}
+
+blockquote:before,
+blockquote:after,
+q:before,
+q:after {
+  content: "";
+  content: none;
+}
+
+table {
+  border-collapse: collapse;
+  border-spacing: 0;
+}
+
+body {
+  background-image: url("../imgs/irongrip.png");
+  color: white;
+  font-family: "Nunito", sans-serif;
+}
+
+.team-result {
+  position: absolute;
+  left: 50%;
+  top: 40%;
+  transform: translate(-50%, -50%);
+}
+.team-result #wrap-container {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+}
+.team-result #wrap-container .wrap-heading {
+  padding-bottom: 30px;
+  text-align: center;
+  font-size: 3rem;
+}
+.team-result #wrap-container .wrap-input__block {
+  width: 97%;
+  display: flex;
+  justify-content: space-between;
+  padding-bottom: 50px;
+}
+.team-result #wrap-container .wrap-input__block input {
+  width: 30%;
+  padding: 20px 0;
+  text-align: center;
+  font-size: 1.25rem;
+  border-radius: 15px;
+}
+.team-result #wrap-container .wrap-input__block input::-moz-placeholder {
+  color: black;
+}
+.team-result #wrap-container .wrap-input__block input::placeholder {
+  color: black;
+}
+.team-result #wrap-container .wrap-input__block #wrap-btn {
+  background-color: #8ef8f4;
+  border: 1px solid black;
+}
+.team-result #wrap-container .wrap-input__block #wrap-btn:hover {
+  background-color: #5a9a98;
+}
+.team-result #wrap-container .wrap-input__block #wrap-btn:active {
+  background-color: #2e5352;
+}
+
+.team-result__item {
+  padding-top: 50px;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+}
+.team-result__item .teamBlock {
+  display: flex;
+}
+.team-result__item .teamBlock .team {
+  margin-right: 15px;
+}
+.team-result__item .adjudicatorBlock {
+  position: relative;
+  left: -90px;
+  display: flex;
+  margin-bottom: 15px;
+  margin-left: 2px;
+}
+.team-result__item .adjudicatorBlock .firstitem {
+  margin-right: 12px;
+}
+.team-result__item .result-btn {
+  margin-top: 50px;
+  background-color: #8ef8f4;
+  border: 1px solid black;
+}
+.team-result__item .result-btn:hover {
+  background-color: #5a9a98;
+}
+.team-result__item .result-btn:active {
+  background-color: #2e5352;
+}
+.team-result__item .result {
+  width: 180px;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  font-size: 32px;
+  color: cyan;
+}
+
+input,
+.firstitem,
+.result-btn {
+  width: 180px;
+  height: 16x;
+  padding: 1px 2px;
+  padding: 20px 0;
+  text-align: center;
+  font-size: 1.25rem;
+  border-radius: 15px;
+}
+input::-moz-placeholder, .firstitem::-moz-placeholder, .result-btn::-moz-placeholder {
+  color: black;
+}
+input::placeholder,
+.firstitem::placeholder,
+.result-btn::placeholder {
+  color: black;
+}/*# sourceMappingURL=style.css.map */

@@ -1,0 +1,123 @@
+body {
+  background-image: url('../imgs/irongrip.png');
+  color: white;
+  font-family: 'Nunito', sans-serif;
+}
+
+.team-result {
+  position: absolute;
+  left: 50%;
+  top: 40%;
+  transform: translate(-50%, -50%);
+
+  #wrap-container {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+
+    .wrap-heading {
+      padding-bottom: 30px;
+      text-align: center;
+      font-size: 3rem;
+    }
+
+    .wrap-input__block {
+      width: 97%;
+      display: flex;
+      justify-content: space-between;
+      padding-bottom: 50px;
+      // border-bottom: 4px solid #8ef8f4;
+      input {
+        width: 30%;
+        padding: 20px 0;
+        text-align: center;
+        font-size: 1.25rem;
+        border-radius: 15px;
+        &::placeholder {
+          color: black;
+        }
+      }
+      #wrap-btn {
+        background-color: #8ef8f4;
+        border: 1px solid black;
+        &:hover {
+          background-color: #5a9a98;
+        }
+        &:active {
+          background-color: #2e5352;
+        }
+      }
+    }
+  }
+}
+
+.team-result__item {
+  padding-top: 50px;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+
+  .teamBlock {
+    display: flex;
+    .team {
+      margin-right: 15px;
+    }
+    // grid-template-columns: 1fr 1fr 1fr 1fr;
+  }
+
+  .adjudicatorBlock {
+    position: relative;
+    left: -90px;
+    display: flex;
+    margin-bottom: 15px;
+    margin-left: 2px;
+    // justify-content: flex-end;
+
+    .firstitem {
+      margin-right: 12px;
+    }
+  }
+
+  .result-btn {
+    margin-top: 50px;
+    background-color: #8ef8f4;
+    border: 1px solid black;
+    &:hover {
+      background-color: #5a9a98;
+    }
+    &:active {
+      background-color: #2e5352;
+    }
+  }
+
+  .result {
+    width: 180px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    font-size: 32px;
+    color: cyan;
+  }
+}
+
+input,
+.firstitem,
+.result-btn {
+  width: 180px;
+  height: 16x;
+  // border: 2px solid black;
+  padding: 1px 2px;
+  padding: 20px 0;
+  text-align: center;
+  font-size: 1.25rem;
+  border-radius: 15px;
+  &::placeholder {
+    color: black;
+  }
+}
+
+// .firstitem {
+//   margin-bottom: px;
+// }

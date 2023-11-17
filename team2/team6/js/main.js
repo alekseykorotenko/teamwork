@@ -1,13 +1,11 @@
 let teamResultBlock = document.querySelector('.team-result__item');
 let teamBlock = document.getElementsByClassName('teamBlock');
-let teamResult = document.querySelector('.team-result');
+
 let btnStart = document.querySelector('#wrap-btn');
 
 btnStart.addEventListener('click', function () {
   let teamAmount = document.getElementById('teamAmount').value;
   let markAmount = document.getElementById('markAmount').value;
-
-  console.log(markAmount);
 
   let setTeamBlock =
     '<div class="teamBlock"> <input type="text" class="team" placeholder="Вкажи команду" />';
@@ -29,13 +27,6 @@ btnStart.addEventListener('click', function () {
 
   let resultBlock = adjudicator;
 
-  if (markAmount > 10) {
-    // search.style.position = 'relative';
-    // search.style.left = '32%';
-    teamResult.style.overflowX = 'scroll';
-    // teamResult.firstChild.style.alignItem = 'center';
-  }
-
   for (let i = 0; i < teamAmount; i++) {
     resultBlock += setTeamBlock;
   }
@@ -44,18 +35,10 @@ btnStart.addEventListener('click', function () {
   teamResultBlock.innerHTML = resultBlock;
 
   let btnResult = document.querySelector('.result-btn');
-  let search = document.getElementById('wrap-container');
   let teamResultArray = document.getElementsByClassName('team');
   let markResultArray = document.getElementsByClassName('mark');
   let sumResultArray = document.getElementsByClassName('result');
-
-  for (let i = 0; i < markResultArray.length; i++) {
-    markResultArray[i].addEventListener('change', function () {
-      let v = parseInt(this.value);
-      if (v < 1) this.value = 1;
-      if (v > 100) this.value = 100;
-    });
-  }
+  let search = document.getElementById('wrap-container');
 
   btnResult.addEventListener('click', function () {
     let result = document.createElement(`div`);
