@@ -28,16 +28,15 @@ body {
   padding: 40px 0 60px;
   #wrap-container {
     position: relative;
-    // left: 32%;
     .wrap-heading {
       display: flex;
       justify-content: space-between;
-      // align-items: flex-end;
       position: relative;
       padding: 20px 0;
       gap: 10%;
       .team-wrap,
-      .adjudicator-wrap {
+      .adjudicator-wrap,
+      .points-wrap {
         display: flex;
         flex-direction: column;
         align-items: center;
@@ -52,6 +51,7 @@ body {
         }
       }
     }
+    select,
     input {
       margin: 15px;
       border: 2px solid $mainColor;
@@ -67,6 +67,10 @@ body {
           transform: scale(1.1);
         }
       }
+    }
+
+    select {
+      margin-top: 0;
     }
     input[type='number'] {
       -moz-appearance: textfield;
@@ -93,16 +97,10 @@ body {
         transform: scale(0.9);
       }
     }
-    // #markAmount {
-
-    // }
   }
   .team-result__block {
     .team-result__item {
-      // width: 100%;
       text-align: center;
-      // display: flex;
-      // flex-direction: column;
       .resultText {
         padding: 20px 0;
         font-size: 18px;
@@ -133,12 +131,10 @@ body {
       input[type='number'] {
         -moz-appearance: textfield;
         appearance: textfield;
-        // margin: 0;
       }
       input[type='number']::-webkit-inner-spin-button,
       input[type='number']::-webkit-outer-spin-button {
         -webkit-appearance: none;
-        // margin: 0;
       }
       .adjudicatorBlock {
         display: flex;
@@ -173,12 +169,6 @@ body {
             box-shadow: 0px 0px 10px 2px rgba(0, 255, 166, 0.75);
           }
         }
-
-        // .teamMark {
-        // input {
-
-        // }
-        // }
         output {
           display: flex;
           justify-content: center;
@@ -219,11 +209,9 @@ body {
 
 .adjudicatorBlock {
   display: flex;
-  // justify-content: flex-end;
 }
 
 input {
   width: 149px;
-  // height: 16px;
   padding: 1px 2px;
 }

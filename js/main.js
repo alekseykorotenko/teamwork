@@ -3,11 +3,13 @@ let teamBlock = document.getElementsByClassName('teamBlock');
 let teamResult = document.querySelector('.team-result');
 let btnStart = document.querySelector('#wrap-btn');
 
+console.log(teamBlock);
+
+//reaction on btn "Обрати"
 btnStart.addEventListener('click', function () {
   let teamAmount = document.getElementById('teamAmount').value;
   let markAmount = document.getElementById('markAmount').value;
-
-  console.log(markAmount);
+  let pointsSystem = document.getElementById('points').value;
 
   let setTeamBlock =
     '<div class="teamBlock"> <input type="text" class="team" placeholder="Вкажи команду" />';
@@ -17,7 +19,7 @@ btnStart.addEventListener('click', function () {
     '<div class="adjudicatorBlock"> <div class="firstitem"></div>';
 
   for (let i = 0; i < markAmount; i++) {
-    markAmountBlock += `<div class="teamMark"><input type="number" class="mark" placeholder="Вкажи оцінку" min="1"/></div>`;
+    markAmountBlock += `<div class="teamMark"><input type="number" class="mark" placeholder="Вкажи оцінку"/></div>`;
     adjudicator += `<input type="text" class="adjudicator" placeholder="Вкажи жюрі"/>`;
   }
 
@@ -44,7 +46,7 @@ btnStart.addEventListener('click', function () {
   for (let i = 0; i < teamAmount; i++) {
     resultBlock += setTeamBlock;
   }
-  resultBlock += '<button class="result-btn">Порахувати</button>';
+  // resultBlock += '<button class="result-btn">Порахувати</button>';
 
   teamResultBlock.innerHTML = resultBlock;
 
@@ -53,20 +55,17 @@ btnStart.addEventListener('click', function () {
   let markResultArray = document.getElementsByClassName('mark');
   let sumResultArray = document.getElementsByClassName('result');
 
-  for (let i = 0; i < markResultArray.length; i++) {
-    markResultArray[i].addEventListener('change', function () {
-      let v = parseInt(this.value);
-      if (v < 1) this.value = 1;
-      if (v > 100) this.value = 100;
-    });
+  let minValue = 1;
+  let maxValue;
+  if (pointsSystem == 'points1') {
+    maxValue = 5;
+  } else if (pointsSystem == 'points2') {
+    maxValue = 12;
+  } else if (pointsSystem == 'points3') {
+    maxValue = 100;
   }
 
-  btnResult.addEventListener('click', function () {
-    let result = document.createElement(`div`);
-    result.className = `resultText`;
-    result.innerHTML = `Результати`;
-    teamResultBlock.prepend(result);
-
+  function pushChanges() {
     let markList = [];
 
     for (let i = 0; i < markResultArray.length; i++) {
@@ -84,12 +83,19 @@ btnStart.addEventListener('click', function () {
 
       sumResultArray[i].innerHTML = `${markSum}`;
     }
+  }
 
-    // let items = [];
-    // for (let i = 0; i < list.length; i++) {
-    //   items.push(list[i].childNodes);
-    // }
+  for (let i = 0; i < markResultArray.length; i++) {
+    markResultArray[i].addEventListener('change', function () {
+      let v = parseInt(this.value);
+      if (v < minValue) this.value = minValue;
+      if (v > maxValue) this.value = maxValue;
+      pushChanges();
+      sortArr();
+    });
+  }
 
+  function sortArr() {
     let sortedArr = Array.from(document.querySelectorAll('.teamBlock'));
     sortedArr.sort(function (a, b) {
       let aRes = Number(a.querySelector('.result').innerHTML);
@@ -99,7 +105,5 @@ btnStart.addEventListener('click', function () {
     for (let i = 0; i < sortedArr.length; i++) {
       teamResultBlock.appendChild(sortedArr[i]);
     }
-    btnResult.style.display = 'none';
-    search.style.display = 'none';
-  });
+  }
 });

@@ -175,13 +175,15 @@ body {
   gap: 10%;
 }
 .team-result #wrap-container .wrap-heading .team-wrap,
-.team-result #wrap-container .wrap-heading .adjudicator-wrap {
+.team-result #wrap-container .wrap-heading .adjudicator-wrap,
+.team-result #wrap-container .wrap-heading .points-wrap {
   display: flex;
   flex-direction: column;
   align-items: center;
 }
 .team-result #wrap-container .wrap-heading .team-wrap span,
-.team-result #wrap-container .wrap-heading .adjudicator-wrap span {
+.team-result #wrap-container .wrap-heading .adjudicator-wrap span,
+.team-result #wrap-container .wrap-heading .points-wrap span {
   display: block;
   margin-bottom: 6px;
   color: rgb(4, 27, 54);
@@ -190,6 +192,7 @@ body {
   text-shadow: 1px 1px 5px rgb(101, 207, 201);
   font-size: 0.8rem;
 }
+.team-result #wrap-container select,
 .team-result #wrap-container input {
   margin: 15px;
   border: 2px solid #12c2c4;
@@ -197,14 +200,19 @@ body {
   color: white;
   background-color: black;
 }
+.team-result #wrap-container select:not(#wrap-btn),
 .team-result #wrap-container input:not(#wrap-btn) {
   padding: 10px;
   font-size: 20px;
   transition: all 0.15s;
 }
+.team-result #wrap-container select:not(#wrap-btn):focus,
 .team-result #wrap-container input:not(#wrap-btn):focus {
   box-shadow: 0px 0px 10px 2px #12c2c4;
   transform: scale(1.1);
+}
+.team-result #wrap-container select {
+  margin-top: 0;
 }
 .team-result #wrap-container input[type=number] {
   -moz-appearance: textfield;
