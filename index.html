@@ -27,11 +27,26 @@
             </div>
             <div class="points-wrap">
               <span>Cистема оцінювання</span>
-              <select name="points" id="points">
+              <!-- <select name="points" id="points">
                 <option value="points1">5-бальна</option>
                 <option value="points2">12-бальна</option>
                 <option value="points3">100-бальна</option>
-              </select>
+              </select> -->
+              <div class="select" id="points">
+                <div class="select-title">5-бальна</div>
+                <div class="input-wrap">
+                  <input type="radio" id="selectName1" value="points1" name="selectName" checked>
+                  <label for="selectName1">5-бальна</label>
+                </div>
+                <div class="input-wrap">
+                  <input type="radio" id="selectName2" value="points2" name="selectName">
+                  <label for="selectName2">12-бальна</label>
+                </div>
+                <div class="input-wrap">
+                  <input type="radio" id="selectName3" value="points3" name="selectName">
+                  <label for="selectName3">100-бальна</label>
+                </div>
+              </div>
             </div>
             <input type="submit" id="wrap-btn" value="Обрати" />
           </div>

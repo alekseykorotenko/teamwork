@@ -5,6 +5,28 @@ let btnStart = document.querySelector('#wrap-btn');
 
 console.log(teamBlock);
 
+let selectTitle = document.querySelector(`.select-title`);
+let select = document.querySelector(`.select`);
+
+selectTitle.addEventListener(`click`, function () {
+  select.classList.toggle(`active`);
+})
+
+let inputWrap = document.querySelectorAll(`.input-wrap`);
+inputWrap.forEach(inputWrap => {
+  let label = inputWrap.querySelector(`label`);
+  inputWrap.addEventListener(`click`, function () {
+    selectTitle.textContent = label.textContent;
+  })
+});
+
+document.addEventListener(`click`, function (event) {
+  let isClickInside = selectTitle.contains(event.target);
+  if (!isClickInside) {
+    select.classList.remove(`active`);
+  }
+})
+
 //reaction on btn "Обрати"
 btnStart.addEventListener('click', function () {
   let teamAmount = document.getElementById('teamAmount').value;
@@ -57,11 +79,18 @@ btnStart.addEventListener('click', function () {
 
   let minValue = 1;
   let maxValue;
-  if (pointsSystem == 'points1') {
+  // if (pointsSystem == 'points1') {
+  //   maxValue = 5;
+  // } else if (pointsSystem == 'points2') {
+  //   maxValue = 12;
+  // } else if (pointsSystem == 'points3') {
+  //   maxValue = 100;
+  // }
+  if (selectTitle.textContent == '5-бальна') {
     maxValue = 5;
-  } else if (pointsSystem == 'points2') {
+  } else if (selectTitle.textContent == '12-бальна') {
     maxValue = 12;
-  } else if (pointsSystem == 'points3') {
+  } else if (selectTitle.textContent == '100-бальна') {
     maxValue = 100;
   }
 
